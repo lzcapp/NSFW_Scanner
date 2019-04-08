@@ -50,7 +50,7 @@
             // 
             this.llbPath.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbPath.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbPath.Location = new System.Drawing.Point(151, 22);
+            this.llbPath.Location = new System.Drawing.Point(22, 20);
             this.llbPath.Name = "llbPath";
             this.llbPath.Size = new System.Drawing.Size(298, 31);
             this.llbPath.TabIndex = 1;
@@ -61,7 +61,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel2.Location = new System.Drawing.Point(151, 84);
+            this.linkLabel2.Location = new System.Drawing.Point(22, 85);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(73, 29);
             this.linkLabel2.TabIndex = 2;
@@ -72,7 +72,7 @@
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel3.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel3.Location = new System.Drawing.Point(151, 128);
+            this.linkLabel3.Location = new System.Drawing.Point(22, 125);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(73, 29);
             this.linkLabel3.TabIndex = 3;
@@ -83,7 +83,7 @@
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel4.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel4.Location = new System.Drawing.Point(151, 174);
+            this.linkLabel4.Location = new System.Drawing.Point(22, 166);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(103, 29);
             this.linkLabel4.TabIndex = 4;
@@ -93,9 +93,9 @@
             // 
             this.llbPorn.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbPorn.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbPorn.Location = new System.Drawing.Point(310, 84);
+            this.llbPorn.Location = new System.Drawing.Point(190, 85);
             this.llbPorn.Name = "llbPorn";
-            this.llbPorn.Size = new System.Drawing.Size(139, 29);
+            this.llbPorn.Size = new System.Drawing.Size(130, 29);
             this.llbPorn.TabIndex = 5;
             this.llbPorn.Text = "00";
             // 
@@ -103,9 +103,9 @@
             // 
             this.llbSexy.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbSexy.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbSexy.Location = new System.Drawing.Point(310, 128);
+            this.llbSexy.Location = new System.Drawing.Point(190, 125);
             this.llbSexy.Name = "llbSexy";
-            this.llbSexy.Size = new System.Drawing.Size(139, 29);
+            this.llbSexy.Size = new System.Drawing.Size(130, 29);
             this.llbSexy.TabIndex = 6;
             this.llbSexy.Text = "00";
             // 
@@ -113,9 +113,9 @@
             // 
             this.llbNorm.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbNorm.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbNorm.Location = new System.Drawing.Point(310, 174);
+            this.llbNorm.Location = new System.Drawing.Point(190, 166);
             this.llbNorm.Name = "llbNorm";
-            this.llbNorm.Size = new System.Drawing.Size(139, 29);
+            this.llbNorm.Size = new System.Drawing.Size(130, 29);
             this.llbNorm.TabIndex = 7;
             this.llbNorm.Text = "00";
             // 
@@ -123,7 +123,7 @@
             // 
             this.llbPort.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbPort.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbPort.Location = new System.Drawing.Point(151, 223);
+            this.llbPort.Location = new System.Drawing.Point(22, 210);
             this.llbPort.Name = "llbPort";
             this.llbPort.Size = new System.Drawing.Size(298, 28);
             this.llbPort.TabIndex = 10;
@@ -131,18 +131,17 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(29, 276);
+            this.progressBar1.Location = new System.Drawing.Point(12, 272);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(420, 29);
+            this.progressBar1.Size = new System.Drawing.Size(444, 29);
             this.progressBar1.TabIndex = 11;
             // 
             // picShow
             // 
             this.picShow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picShow.Image = global::FileScanner.Properties.Resources.stop_grey;
-            this.picShow.Location = new System.Drawing.Point(12, 119);
+            this.picShow.Location = new System.Drawing.Point(312, 90);
             this.picShow.Name = "picShow";
-            this.picShow.Size = new System.Drawing.Size(121, 132);
+            this.picShow.Size = new System.Drawing.Size(132, 148);
             this.picShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picShow.TabIndex = 8;
             this.picShow.TabStop = false;
@@ -151,9 +150,9 @@
             // 
             this.picSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearch.Image = global::FileScanner.Properties.Resources.search_black;
-            this.picSearch.Location = new System.Drawing.Point(32, 28);
+            this.picSearch.Location = new System.Drawing.Point(353, 12);
             this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(85, 85);
+            this.picSearch.Size = new System.Drawing.Size(69, 73);
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearch.TabIndex = 0;
             this.picSearch.TabStop = false;
@@ -163,7 +162,7 @@
             // 
             this.llbPicfile.Font = new System.Drawing.Font("Unispace", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbPicfile.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbPicfile.Location = new System.Drawing.Point(153, 53);
+            this.llbPicfile.Location = new System.Drawing.Point(24, 51);
             this.llbPicfile.Name = "llbPicfile";
             this.llbPicfile.Size = new System.Drawing.Size(296, 18);
             this.llbPicfile.TabIndex = 12;
@@ -175,7 +174,7 @@
             this.linkLabel1.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.ForeColor = System.Drawing.Color.Red;
             this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel1.Location = new System.Drawing.Point(310, 222);
+            this.linkLabel1.Location = new System.Drawing.Point(181, 210);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(73, 29);
             this.linkLabel1.TabIndex = 13;
@@ -186,7 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(468, 330);
+            this.ClientSize = new System.Drawing.Size(468, 323);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.llbPicfile);
             this.Controls.Add(this.progressBar1);
