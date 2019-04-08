@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicInfo", "PicInfo\PicInfo.csproj", "{4E2C2A19-3766-4F07-8874-CD48FCB0300D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicInfo", "PicInfo.csproj", "{4E2C2A19-3766-4F07-8874-CD48FCB0300D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
