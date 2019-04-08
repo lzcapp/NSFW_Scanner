@@ -4,9 +4,7 @@ Imports System.Text
 Imports Newtonsoft.Json.Linq
 
 Module CensorPic
-    Public resultArr(3) As String
-    Public pot As Boolean
-    'Public PicStr As String
+    Private ReadOnly ResultArr(3) As String
 
     Public Function CencorPic(accessToken As String)
         Dim webClient As New WebClient()
@@ -42,19 +40,19 @@ Module CensorPic
         Select Case resultArr(1)
             Case "色情"
                 i = 0
-                Form1.lblType.ForeColor = Color.Red
+                frmMain.lblType.ForeColor = Color.Red
             Case "性感"
                 i = 1
-                Form1.lblType.ForeColor = Color.Orange
+                frmMain.lblType.ForeColor = Color.Orange
             Case "正常"
                 i = 2
-                Form1.lblType.ForeColor = Color.Green
+                frmMain.lblType.ForeColor = Color.Green
         End Select
 
         resultArr(2) = Math.Round(resultJson.SelectToken("result")(i).SelectToken("probability").ToString()*100, 3)
 
-        Form1.lblType.Text = resultArr(1)
-        Form1.lblPercent.Text = resultArr(2) + "% 概率" + vbCrLf + resultArr(0)
+        frmMain.lblType.Text = resultArr(1)
+        frmMain.lblPercent.Text = resultArr(2) + "% 概率" + vbCrLf + resultArr(0)
         Return 0
     End Function
 End Module

@@ -2,7 +2,6 @@
 
 Module FindProcess
     Public Function FindProcessPath()
-        pot = False
         If Process.GetProcessesByName("Honeyview").Length > 0 Then
             Dim item As Process = Process.GetProcessesByName("Honeyview")(0)
             Dim query As String = String.Format("SELECT CommandLine FROM Win32_Process WHERE ProcessId = {0}", item.Id)

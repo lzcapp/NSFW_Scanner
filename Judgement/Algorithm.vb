@@ -2,11 +2,11 @@
 Imports System.IO
 
 Module Algorithm
-    Public imgPath As String
+    Public ImgPath As String
 
     Public Function ImgBase64()
         Dim imgBitmap = New Bitmap(imgPath)
-        Form1.PictureBox2.Image = imgBitmap
+        frmMain.PictureBox2.Image = imgBitmap
         Dim memStream = New MemoryStream
         imgBitmap.Save(memStream, ImageFormat.Jpeg)
         Dim arr = New Byte((memStream.Length) - 1) {}

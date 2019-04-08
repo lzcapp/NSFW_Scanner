@@ -89,23 +89,11 @@
   <ItemGroup>
     <Compile Include="Algorithm.vb" />
     <Compile Include="CensorPic.vb" />
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="frmMain.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmMain.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMonitor.Designer.vb">
-      <DependentUpon>frmMonitor.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmMonitor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GetOath.vb" />
@@ -127,14 +115,8 @@
     <Compile Include="FindProcess.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMonitor.resx">
-      <DependentUpon>frmMonitor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
