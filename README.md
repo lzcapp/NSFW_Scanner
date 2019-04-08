@@ -4,6 +4,10 @@ Using [百度图像审核API(Baidu Image Censoring)](https://ai.baidu.com/tech/i
 
 ## PicInfo
 
+![PicInfo](Screenshot/0.PNG)
+
 ## Judgement
+![Judgement](Screenshot/1.PNG)
 
 ## NSFW_Scanner
+![NSFW_Scanner](Screenshot/2.PNG)
