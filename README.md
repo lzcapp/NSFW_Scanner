@@ -10,4 +10,5 @@ Using [百度图像审核API(Baidu Image Censoring)](https://ai.baidu.com/tech/i
 ![Judgement](Screenshot/1.PNG)
 
 ## NSFW_Scanner
-![NSFW_Scanner](Screenshot/3.PNG)
+
+![NSFW_Scanner](Screenshot/4.PNG)
