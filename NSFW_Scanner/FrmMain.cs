@@ -17,6 +17,10 @@ namespace FileScanner
         }
 
         private void PicSearch(object sender, EventArgs e) {
+            var pornNum = 0;
+            var sexyNum = 0;
+            var normNum = 0;
+            var nonpNum = 0;
             listBox1.Items.Clear();
             var dialog = new FolderBrowserDialog {
                 Description = @"Please choose the folder path:"
@@ -28,10 +32,6 @@ namespace FileScanner
             progressBar1.Maximum = fileList.Count;
             foreach (var filePath in fileList)
             {
-                var pornNum = 0;
-                var sexyNum = 0;
-                var normNum = 0;
-                var nonpNum = 0;
                 llbPorn.Text = pornNum.ToString();
                 llbSexy.Text = sexyNum.ToString();
                 llbNorm.Text = normNum.ToString();
@@ -90,6 +90,13 @@ namespace FileScanner
                 }
             }
             return fileList;
+        }
+
+        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            FrmPic.PicPath = listBox1.SelectedItem.ToString();
+            var insFrmPic = new FrmPic();
+            insFrmPic.Show();
+            Application.DoEvents();
         }
     }
 }
