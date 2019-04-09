@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace FileScanner
@@ -11,10 +12,15 @@ namespace FileScanner
             InitializeComponent();
         }
 
-        private void FrmPic_Load(object sender, System.EventArgs e)
+        private void FrmPic_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = Image.FromFile(PicPath);
             Application.DoEvents();
+        }
+
+        private void FrmPic_Deactivate(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
