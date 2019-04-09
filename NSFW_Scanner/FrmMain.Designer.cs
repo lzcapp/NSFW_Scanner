@@ -122,6 +122,7 @@
             // llbPort
             // 
             this.llbPort.Font = new System.Drawing.Font("Unispace", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llbPort.ForeColor = System.Drawing.Color.Red;
             this.llbPort.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
             this.llbPort.Location = new System.Drawing.Point(22, 210);
             this.llbPort.Name = "llbPort";
@@ -138,6 +139,7 @@
             // 
             // picShow
             // 
+            this.picShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picShow.Location = new System.Drawing.Point(312, 90);
             this.picShow.Name = "picShow";
