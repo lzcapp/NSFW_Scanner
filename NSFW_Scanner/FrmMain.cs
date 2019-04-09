@@ -17,6 +17,7 @@ namespace FileScanner
         }
 
         private void PicSearch(object sender, EventArgs e) {
+            listBox1.Items.Clear();
             var dialog = new FolderBrowserDialog {
                 Description = @"Please choose the folder path:"
             };
@@ -42,9 +43,11 @@ namespace FileScanner
                 {
                     case "色情":
                         pornNum++;
+                        listBox1.Items.Add(filePath);
                         break;
                     case "性感":
                         sexyNum++;
+                        listBox1.Items.Add(filePath);
                         break;
                     case "正常":
                         normNum++;
@@ -53,7 +56,7 @@ namespace FileScanner
                         nonpNum++;
                         break;
                 }
-                var portNum = Math.Round((pornNum + sexyNum) / (double)(pornNum + sexyNum + normNum) * 100, 2);
+                var portNum = Math.Round((pornNum + sexyNum) / (double)fileList.Count * 100, 2);
                 llbPort.Text = portNum + @"%";
                 llbPorn.Text = pornNum + @"x";
                 llbSexy.Text = sexyNum + @"x";
