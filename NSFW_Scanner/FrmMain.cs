@@ -3,10 +3,10 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace FileScanner {
-    public partial class Form1 : Form {
+    public partial class FrmMain : Form {
         private readonly PicScanner _scanner = new PicScanner();
 
-        public Form1() {
+        public FrmMain() {
             InitializeComponent();
         }
 
