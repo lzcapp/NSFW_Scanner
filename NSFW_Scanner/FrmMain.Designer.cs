@@ -143,7 +143,7 @@
             // 
             this.progressBar1.BackColor = System.Drawing.Color.MediumTurquoise;
             this.progressBar1.Location = new System.Drawing.Point(9, 191);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(333, 22);
             this.progressBar1.TabIndex = 11;
@@ -153,7 +153,7 @@
             this.picShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picShow.Location = new System.Drawing.Point(234, 68);
-            this.picShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picShow.Margin = new System.Windows.Forms.Padding(2);
             this.picShow.Name = "picShow";
             this.picShow.Size = new System.Drawing.Size(100, 112);
             this.picShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -165,7 +165,7 @@
             this.picSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearch.Image = global::FileScanner.Properties.Resources.search_black;
             this.picSearch.Location = new System.Drawing.Point(265, 9);
-            this.picSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picSearch.Margin = new System.Windows.Forms.Padding(2);
             this.picSearch.Name = "picSearch";
             this.picSearch.Size = new System.Drawing.Size(52, 55);
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -202,9 +202,11 @@
             this.listBox1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.HorizontalScrollbar = true;
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(9, 221);
             this.listBox1.Name = "listBox1";
+            this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.Size = new System.Drawing.Size(333, 122);
             this.listBox1.TabIndex = 14;
             // 
@@ -230,7 +232,7 @@
             this.Controls.Add(this.picSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.Text = "FileScanner";
