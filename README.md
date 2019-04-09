@@ -4,6 +4,7 @@ Using [百度图像审核API(Baidu Image Censoring)](https://ai.baidu.com/tech/i
 
 Reference:
 - http://csharphelper.com/blog/2018/04/display-database-pictures-in-a-listview-control-in-c/
+- https://www.cnblogs.com/skl99/archive/2010/01/21/1653124.html
 
 ## PicInfo
 
