@@ -42,6 +42,7 @@
             this.picSearch = new System.Windows.Forms.PictureBox();
             this.llbPicfile = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.picShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             this.SuspendLayout();
@@ -132,7 +133,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 272);
+            this.progressBar1.Location = new System.Drawing.Point(12, 258);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(444, 29);
             this.progressBar1.TabIndex = 11;
@@ -182,12 +183,22 @@
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.Text = "NSFW";
             // 
+            // listView1
+            // 
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.Location = new System.Drawing.Point(12, 304);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(444, 154);
+            this.listView1.TabIndex = 14;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(468, 323);
+            this.ClientSize = new System.Drawing.Size(468, 470);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.llbPicfile);
             this.Controls.Add(this.progressBar1);
@@ -229,6 +240,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.LinkLabel llbPicfile;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 
