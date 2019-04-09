@@ -125,7 +125,7 @@
             this.llbPort.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
             this.llbPort.Location = new System.Drawing.Point(22, 210);
             this.llbPort.Name = "llbPort";
-            this.llbPort.Size = new System.Drawing.Size(298, 28);
+            this.llbPort.Size = new System.Drawing.Size(284, 28);
             this.llbPort.TabIndex = 10;
             this.llbPort.Text = "00.00%";
             // 
@@ -180,7 +180,7 @@
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.Text = "NSFW";
             // 
-            // Form1
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,7 +202,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FrmMain";
             this.Text = "FileScanner";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picShow)).EndInit();
