@@ -62,11 +62,20 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPic.Designer.cs">
+      <DependentUpon>FrmPic.cs</DependentUpon>
+    </Compile>
     <Compile Include="PicScanner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPic.resx">
+      <DependentUpon>FrmPic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
