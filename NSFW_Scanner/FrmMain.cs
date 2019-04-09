@@ -1,66 +1,45 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
-namespace FileScanner {
+namespace FileScanner
+{
     public partial class FrmMain : Form {
-        private readonly PicScanner _scanner = new PicScanner();
+        private static readonly PicScanner Scanner = new PicScanner();
 
         public FrmMain() {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            _scanner.InitiateScanner();
+            Scanner.InitiateScanner();
         }
 
         private void PicSearch(object sender, EventArgs e) {
-            var pornNum = 0;
-            var sexyNum = 0;
-            var normNum = 0;
-            var notpNum = 0;
-            llbPorn.Text = pornNum.ToString();
-            llbSexy.Text = sexyNum.ToString();
-            llbNorm.Text = normNum.ToString();
             var dialog = new FolderBrowserDialog {
                 Description = @"Please choose the folder path:"
             };
             if (dialog.ShowDialog() != DialogResult.OK) return;
             var dirPath = dialog.SelectedPath;
             llbPath.Text = dirPath;
-            var dirInfo = new DirectoryInfo(dirPath);
-            var files = dirInfo.GetFileSystemInfos();
-            progressBar1.Maximum = files.Length;
-            foreach (var file in files) {
-                if (file is DirectoryInfo) {
-                    notpNum++;
-                    progressBar1.Value = pornNum + sexyNum + normNum + notpNum;
-                    continue;
-                }
-                var strFileExt = file.Extension.ToLower();
-                if (strFileExt != ".jpg" &&
-                    strFileExt != ".png" &&
-                    strFileExt != ".gif" &&
-                    strFileExt != ".bmp" &&
-                    strFileExt != ".jpeg") {
-                    notpNum++;
-                    progressBar1.Value = pornNum + sexyNum + normNum + notpNum;
-                    continue;
-                }
-
-                picShow.ImageLocation = file.FullName;
-                llbPicfile.Text = file.FullName.Split('\\')[file.FullName.Split('\\').Length - 1];
-                var fileInfo = new FileInfo(file.FullName);
-                if (fileInfo.Length > 1000000) {
-                    //image = PicScanner.ImageCompress(file.FullName);
-                    notpNum++;
-                    progressBar1.Value = pornNum + sexyNum + normNum + notpNum;
-                    continue;
-                }
-
-                var image = File.ReadAllBytes(file.FullName);
-                var picType = _scanner.PicQuery(image);
-                switch (picType) {
+            var fileList = GetFiles(dirPath);
+            progressBar1.Maximum = fileList.Count;
+            foreach (var filePath in fileList)
+            {
+                var pornNum = 0;
+                var sexyNum = 0;
+                var normNum = 0;
+                var nonpNum = 0;
+                llbPorn.Text = pornNum.ToString();
+                llbSexy.Text = sexyNum.ToString();
+                llbNorm.Text = normNum.ToString();
+                picShow.ImageLocation = filePath;
+                llbPicfile.Text = filePath.Split('\\')[filePath.Split('\\').Length - 1];
+                var image = File.ReadAllBytes(filePath);
+                var picType = Scanner.PicQuery(image);
+                switch (picType)
+                {
                     case "色情":
                         pornNum++;
                         break;
@@ -71,18 +50,43 @@ namespace FileScanner {
                         normNum++;
                         break;
                     default:
-                        notpNum++;
+                        nonpNum++;
                         break;
                 }
-
-                var portNum = Math.Round((pornNum + sexyNum) / (double) (pornNum + sexyNum + normNum) * 100, 2);
+                var portNum = Math.Round((pornNum + sexyNum) / (double)(pornNum + sexyNum + normNum) * 100, 2);
                 llbPort.Text = portNum + @"%";
                 llbPorn.Text = pornNum + @"x";
                 llbSexy.Text = sexyNum + @"x";
                 llbNorm.Text = normNum + @"x";
-                progressBar1.Value = pornNum + sexyNum + normNum + notpNum;
+                progressBar1.Value = pornNum + sexyNum + normNum + nonpNum;
                 Application.DoEvents();
             }
+        }
+
+        private static List<string> GetFiles(string dirPath)
+        {
+            var fileList = new List<string>();
+            var d = new DirectoryInfo(dirPath);
+            var fsInfos = d.GetFileSystemInfos();
+            foreach (var fsInfo in fsInfos)
+            {
+                if (fsInfo is DirectoryInfo)
+                {
+                    GetFiles(fsInfo.FullName);
+                }
+                else
+                {
+                    var fileExt = fsInfo.Extension.ToLower();
+                    if (fileExt != ".jpg" && fileExt != ".png" && fileExt != ".gif" && fileExt != ".bmp" &&
+                        fileExt != ".jpeg") continue;
+                    var fileInfo = new FileInfo(fsInfo.FullName);
+                    if (fileInfo.Length > 1000000)
+                    {
+                        fileList.Add(fsInfo.FullName);
+                    }
+                }
+            }
+            return fileList;
         }
     }
 }
