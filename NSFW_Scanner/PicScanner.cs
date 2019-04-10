@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using Baidu.Aip.ContentCensor;
@@ -11,8 +12,8 @@ namespace FileScanner {
         [SuppressMessage("ReSharper", "InconsistentNaming")]
         public void InitiateScanner() {
             // var APP_ID = "10025535";
-            const string API_KEY = "B7CAN7yIwRI78Gc2zQqVEnS2";
-            const string SECRET_KEY = "Uwj9taafS7M7GRyxhEn9kpCpGojdmRQM";
+            var API_KEY = ConfigurationManager.AppSettings["APIKey"];
+            var SECRET_KEY = ConfigurationManager.AppSettings["SecretKey"];
             _clientAntiPorn = new AntiPorn(API_KEY, SECRET_KEY) {
                 Timeout = 60000 // 超时，毫秒
             };
