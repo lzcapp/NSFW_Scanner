@@ -46,7 +46,7 @@ namespace FileScanner
                 {
                     case "色情":
                         pornNum++;
-                        listBox1.Items.Add(@"Sexy: " + filePath);
+                        listBox1.Items.Add(@"Porn: " + filePath);
                         break;
                     case "性感":
                         sexyNum++;
@@ -59,7 +59,7 @@ namespace FileScanner
                         nonpNum++;
                         break;
                 }
-                var portNum = Math.Round((pornNum + sexyNum) / (double)fileList.Count * 100, 2);
+                var portNum = Math.Round((pornNum + sexyNum) / (double)(pornNum + sexyNum + normNum + nonpNum) * 100, 2);
                 llbPort.Text = portNum + @"%";
                 llbPorn.Text = pornNum + @"x";
                 llbSexy.Text = sexyNum + @"x";
@@ -70,8 +70,8 @@ namespace FileScanner
         }
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e) {
-            var PicPath = listBox1.SelectedItem.ToString();
-            FrmPic.PicPath = PicPath.Split(' ')[1];
+            var picPath = listBox1.SelectedItem.ToString();
+            FrmPic.PicPath = picPath.Split(' ')[1];
             var insFrmPic = new FrmPic();
             insFrmPic.SetBounds(Cursor.Position.X + 30, Cursor.Position.Y - 160, insFrmPic.Width, insFrmPic.Height);
             insFrmPic.Show();
