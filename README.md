@@ -4,15 +4,15 @@ Powered by [百度图像审核API(Baidu Image Censoring)](https://ai.baidu.com/t
 
 ## App.config
   ```XML
-  <appSettings>
-    <add key="APIKey" value=""/>
-    <add key="SecretKey" value=""/>
-  </appSettings>
+  <configuration>
+    ...
+    <appSettings>
+      <add key="APIKey" value=""/>
+      <add key="SecretKey" value=""/>
+    </appSettings>
+    ...
+  </configuration>
   ```
-
-## PicInfo
-
-![PicInfo](Screenshot/0.PNG)
 
 ## Judgement
 ![Judgement](Screenshot/1.PNG)
