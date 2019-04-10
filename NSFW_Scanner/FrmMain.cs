@@ -27,8 +27,11 @@ namespace FileScanner
             };
             if (dialog.ShowDialog() != DialogResult.OK) return;
             var dirPath = dialog.SelectedPath;
-            llbPath.Text = dirPath;
-            var fileList = GetFiles(dirPath);
+            llbPath.Text = dirPath + @"\...";
+            var fileList = new List<string>();
+            llbPicfile.Text = @"Start Fecthing Sub-folders and files.";
+            fileList = PicScanner.GetFiles(dirPath, fileList);
+            llbPicfile.Text = @"Start Scanning.";
             progressBar1.Maximum = fileList.Count;
             foreach (var filePath in fileList)
             {
@@ -64,32 +67,6 @@ namespace FileScanner
                 progressBar1.Value = pornNum + sexyNum + normNum + nonpNum;
                 Application.DoEvents();
             }
-        }
-
-        private static List<string> GetFiles(string dirPath)
-        {
-            var fileList = new List<string>();
-            var d = new DirectoryInfo(dirPath);
-            var fsInfos = d.GetFileSystemInfos();
-            foreach (var fsInfo in fsInfos)
-            {
-                if (fsInfo is DirectoryInfo)
-                {
-                    GetFiles(fsInfo.FullName);
-                }
-                else
-                {
-                    var fileExt = fsInfo.Extension.ToLower();
-                    if (fileExt != ".jpg" && fileExt != ".png" && fileExt != ".gif" && fileExt != ".bmp" &&
-                        fileExt != ".jpeg") continue;
-                    var fileInfo = new FileInfo(fsInfo.FullName);
-                    if (fileInfo.Length > 1000000)
-                    {
-                        fileList.Add(fsInfo.FullName);
-                    }
-                }
-            }
-            return fileList;
         }
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e) {

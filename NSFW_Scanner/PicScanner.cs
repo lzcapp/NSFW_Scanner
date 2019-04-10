@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using Baidu.Aip.ContentCensor;
 
 namespace FileScanner {
@@ -24,6 +26,32 @@ namespace FileScanner {
             } catch (Exception) {
                 return @"错误";
             }
+        }
+
+        public static List<string> GetFiles(string dirPath, List<string> fileList)
+        {
+            var d = new DirectoryInfo(dirPath);
+            var fsInfos = d.GetFileSystemInfos();
+            foreach (var fsInfo in fsInfos)
+            {
+                if (fsInfo is DirectoryInfo)
+                {
+                    GetFiles(fsInfo.FullName, fileList);
+                }
+                else
+                {
+                    var fileExt = fsInfo.Extension.ToLower();
+                    if (fileExt != ".jpg" && fileExt != ".png" && fileExt != ".gif" && fileExt != ".bmp" &&
+                        fileExt != ".jpeg") continue;
+                    //var fileInfo = new FileInfo(fsInfo.FullName);
+                    /*if (fileInfo.Length < 1000000)
+                    {
+                        fileList.Add(fsInfo.FullName);
+                    }*/
+                    fileList.Add(fsInfo.FullName);
+                }
+            }
+            return fileList;
         }
 
         /*
