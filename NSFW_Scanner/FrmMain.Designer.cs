@@ -18,6 +18,8 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+            System.Diagnostics.Process thisProcess = System.Diagnostics.Process.GetProcessById(System.Diagnostics.Process.GetCurrentProcess().Id);
+            thisProcess.Kill();
         }
 
         #region Windows 窗体设计器生成的代码
