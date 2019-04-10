@@ -15,10 +15,11 @@ namespace FileScanner
         private void FrmPic_Load(object sender, EventArgs e)
         {
             pictureBox1.Image = Image.FromFile(PicPath);
+            pictureBox1.Focus();
             Application.DoEvents();
         }
 
-        private void FrmPic_Deactivate(object sender, EventArgs e)
+        private void PictureBox1_LostFocus(object sender, EventArgs e)
         {
             Close();
         }
