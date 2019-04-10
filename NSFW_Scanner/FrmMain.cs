@@ -71,7 +71,16 @@ namespace FileScanner
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e) {
             var picPath = listBox1.SelectedItem.ToString();
-            FrmPic.PicPath = picPath.Split(' ')[1];
+            string repPath = null;
+            switch (picPath[0]) {
+                case 'S':
+                    repPath = picPath.Replace("Sexy: ", "");
+                    break;
+                case 'P':
+                    repPath = picPath.Replace("Porn: ", "");
+                    break;
+            }
+            FrmPic.PicPath = repPath;
             var insFrmPic = new FrmPic();
             insFrmPic.SetBounds(Cursor.Position.X + 30, Cursor.Position.Y - 160, insFrmPic.Width, insFrmPic.Height);
             insFrmPic.Show();
