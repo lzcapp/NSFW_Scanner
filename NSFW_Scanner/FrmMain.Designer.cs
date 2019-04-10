@@ -125,7 +125,7 @@
             this.llbPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbPort.ForeColor = System.Drawing.Color.Red;
             this.llbPort.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbPort.Location = new System.Drawing.Point(21, 211);
+            this.llbPort.Location = new System.Drawing.Point(21, 207);
             this.llbPort.Name = "llbPort";
             this.llbPort.Size = new System.Drawing.Size(284, 28);
             this.llbPort.TabIndex = 10;
@@ -143,9 +143,9 @@
             // 
             this.picShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picShow.Cursor = System.Windows.Forms.Cursors.Default;
-            this.picShow.Location = new System.Drawing.Point(312, 91);
+            this.picShow.Location = new System.Drawing.Point(311, 91);
             this.picShow.Name = "picShow";
-            this.picShow.Size = new System.Drawing.Size(133, 149);
+            this.picShow.Size = new System.Drawing.Size(144, 149);
             this.picShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picShow.TabIndex = 8;
             this.picShow.TabStop = false;
@@ -154,7 +154,7 @@
             // 
             this.picSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearch.Image = global::FileScanner.Properties.Resources.search_black;
-            this.picSearch.Location = new System.Drawing.Point(353, 12);
+            this.picSearch.Location = new System.Drawing.Point(354, 12);
             this.picSearch.Name = "picSearch";
             this.picSearch.Size = new System.Drawing.Size(69, 73);
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -178,7 +178,7 @@
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.ForeColor = System.Drawing.Color.Red;
             this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel1.Location = new System.Drawing.Point(181, 211);
+            this.linkLabel1.Location = new System.Drawing.Point(181, 207);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(88, 29);
             this.linkLabel1.TabIndex = 13;
@@ -192,7 +192,7 @@
             this.listBox1.HorizontalScrollbar = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(12, 295);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.Size = new System.Drawing.Size(443, 162);

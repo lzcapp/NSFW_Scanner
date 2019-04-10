@@ -46,11 +46,11 @@ namespace FileScanner
                 {
                     case "色情":
                         pornNum++;
-                        listBox1.Items.Add(filePath);
+                        listBox1.Items.Add(@"Sexy: " + filePath);
                         break;
                     case "性感":
                         sexyNum++;
-                        listBox1.Items.Add(filePath);
+                        listBox1.Items.Add(@"Sexy: " + filePath);
                         break;
                     case "正常":
                         normNum++;
@@ -70,8 +70,10 @@ namespace FileScanner
         }
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e) {
-            FrmPic.PicPath = listBox1.SelectedItem.ToString();
+            var PicPath = listBox1.SelectedItem.ToString();
+            FrmPic.PicPath = PicPath.Split(' ')[1];
             var insFrmPic = new FrmPic();
+            insFrmPic.SetBounds(Cursor.Position.X + 30, Cursor.Position.Y - 160, insFrmPic.Width, insFrmPic.Height);
             insFrmPic.Show();
             Application.DoEvents();
         }

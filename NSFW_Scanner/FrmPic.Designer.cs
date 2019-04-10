@@ -52,6 +52,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPic";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Preview";
             this.TransparencyKey = System.Drawing.SystemColors.Control;
             this.Load += new System.EventHandler(this.FrmPic_Load);
