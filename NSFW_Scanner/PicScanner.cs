@@ -8,6 +8,7 @@ using Baidu.Aip.ContentCensor;
 namespace FileScanner {
     internal class PicScanner {
         private AntiPorn _clientAntiPorn;
+        private static int _maxFileSize;
 
         [SuppressMessage("ReSharper", "InconsistentNaming")]
         public void InitiateScanner() {
@@ -18,6 +19,7 @@ namespace FileScanner {
             if (xmlDoc.DocumentElement == null) return;
             var API_KEY = xmlDoc.DocumentElement["APIKey"]?.InnerText.Trim();
             var SECRET_KEY = xmlDoc.DocumentElement["SecretKey"]?.InnerText.Trim();
+            _maxFileSize = Convert.ToInt32(xmlDoc.DocumentElement["MaxSize"]?.InnerText.Trim());
             _clientAntiPorn = new AntiPorn(API_KEY, SECRET_KEY) {
                 Timeout = 60000 // 超时，毫秒
             };
@@ -48,11 +50,8 @@ namespace FileScanner {
                     var fileExt = fsInfo.Extension.ToLower();
                     if (fileExt != ".jpg" && fileExt != ".png" && fileExt != ".bmp" &&
                         fileExt != ".jpeg") continue;
-                    //var fileInfo = new FileInfo(fsInfo.FullName);
-                    /*if (fileInfo.Length < 1000000)
-                    {
-                        fileList.Add(fsInfo.FullName);
-                    }*/
+                    var fileInfo = new FileInfo(fsInfo.FullName);
+                    if (fileInfo.Length >= _maxFileSize) continue;
                     fileList.Add(fsInfo.FullName);
                 }
             }
