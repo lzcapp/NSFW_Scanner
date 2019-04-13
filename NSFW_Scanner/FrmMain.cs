@@ -71,7 +71,7 @@ namespace FileScanner
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e) {
             var picPath = listBox1.SelectedItem.ToString();
-            string repPath = null;
+            string repPath;
             switch (picPath[0]) {
                 case 'S':
                     repPath = picPath.Replace("Sexy: ", "");
