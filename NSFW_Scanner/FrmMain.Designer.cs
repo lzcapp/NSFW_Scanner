@@ -55,7 +55,7 @@
             this.llbPath.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
             this.llbPath.Location = new System.Drawing.Point(21, 20);
             this.llbPath.Name = "llbPath";
-            this.llbPath.Size = new System.Drawing.Size(299, 31);
+            this.llbPath.Size = new System.Drawing.Size(434, 31);
             this.llbPath.TabIndex = 1;
             this.llbPath.Text = "D:\\test";
             // 
@@ -219,8 +219,8 @@
             this.Controls.Add(this.linkLabel4);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.llbPath);
             this.Controls.Add(this.picSearch);
+            this.Controls.Add(this.llbPath);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
