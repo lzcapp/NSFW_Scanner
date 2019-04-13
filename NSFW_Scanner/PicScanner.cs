@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Xml;
 using Baidu.Aip.ContentCensor;
 
 namespace FileScanner {
@@ -11,9 +11,13 @@ namespace FileScanner {
 
         [SuppressMessage("ReSharper", "InconsistentNaming")]
         public void InitiateScanner() {
-            // var APP_ID = "10025535";
-            var API_KEY = ConfigurationManager.AppSettings["APIKey"];
-            var SECRET_KEY = ConfigurationManager.AppSettings["SecretKey"];
+            var xmlDoc = new XmlDocument();
+            var xmlPath = Environment.CurrentDirectory + @"\Token.config";
+            if (!File.Exists(xmlPath)) return;
+            xmlDoc.Load(xmlPath);
+            if (xmlDoc.DocumentElement == null) return;
+            var API_KEY = xmlDoc.DocumentElement["APIKey"]?.InnerText.Trim();
+            var SECRET_KEY = xmlDoc.DocumentElement["SecretKey"]?.InnerText.Trim();
             _clientAntiPorn = new AntiPorn(API_KEY, SECRET_KEY) {
                 Timeout = 60000 // 超时，毫秒
             };
@@ -42,7 +46,7 @@ namespace FileScanner {
                 else
                 {
                     var fileExt = fsInfo.Extension.ToLower();
-                    if (fileExt != ".jpg" && fileExt != ".png" && fileExt != ".gif" && fileExt != ".bmp" &&
+                    if (fileExt != ".jpg" && fileExt != ".png" && fileExt != ".bmp" &&
                         fileExt != ".jpeg") continue;
                     //var fileInfo = new FileInfo(fsInfo.FullName);
                     /*if (fileInfo.Length < 1000000)
