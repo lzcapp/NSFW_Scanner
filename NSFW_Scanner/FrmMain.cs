@@ -79,6 +79,9 @@ namespace FileScanner
                 case 'P':
                     repPath = picPath.Replace("Porn: ", "");
                     break;
+                default:
+                    repPath = picPath;
+                    break;
             }
             FrmPic.PicPath = repPath;
             var insFrmPic = new FrmPic();
