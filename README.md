@@ -12,7 +12,7 @@ Powered by [百度图像审核API(Baidu Image Censoring)](https://ai.baidu.com/t
     <MaxSize>1000000</MaxSize>
   </root>
   ```
-  MaxSize is refered as max length (byte) of base64 coded file, and should not exceed 4M acrroding to Baidu's official document.
+  `MaxSize` is refered as max length (byte) of base64 coded file, and should not exceed 4M acrroding to Baidu's official document.
 
 ## Judgement
 ![Judgement](Screenshot/1.PNG)
