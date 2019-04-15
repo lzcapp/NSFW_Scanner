@@ -40,8 +40,17 @@ namespace FileScanner
                 llbNorm.Text = normNum.ToString();
                 picShow.ImageLocation = filePath;
                 llbPicfile.Text = filePath.Split('\\')[filePath.Split('\\').Length - 1];
-                var image = File.ReadAllBytes(filePath);
-                var picType = Scanner.PicQuery(image);
+                var picType = "";
+                if (PicScanner.ImageCompress(filePath) == 0) {
+                    var image = File.ReadAllBytes("temp.jpg");
+                    picType = Scanner.PicQuery(image);
+                }
+                try {
+                    File.Delete("temp.jpg");
+                } catch (Exception) {
+                    // ignored
+                }
+
                 switch (picType)
                 {
                     case "色情":
@@ -57,6 +66,7 @@ namespace FileScanner
                         break;
                     default:
                         nonpNum++;
+                        listBox1.Items.Add(@"Skip: " + filePath);
                         break;
                 }
                 var portNum = Math.Round((pornNum + sexyNum) / (double)(pornNum + sexyNum + normNum + nonpNum) * 100, 2);

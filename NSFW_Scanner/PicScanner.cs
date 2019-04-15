@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Xml;
 using Baidu.Aip.ContentCensor;
@@ -51,11 +53,38 @@ namespace FileScanner {
                     if (fileExt != ".jpg" && fileExt != ".png" && fileExt != ".bmp" &&
                         fileExt != ".jpeg") continue;
                     var fileInfo = new FileInfo(fsInfo.FullName);
-                    if (fileInfo.Length >= _maxFileSize) continue;
+                    // if (fileInfo.Length >= _maxFileSize) continue;
                     fileList.Add(fsInfo.FullName);
                 }
             }
             return fileList;
+        }
+
+        public static int ImageCompress(string imagePath) {
+            var myBitmap = new Bitmap(imagePath);
+            var myImageCodecInfo = GetEncoderInfo("image/jpeg");
+            var myEncoder = Encoder.Quality;
+            var myEncoderParameters = new EncoderParameters(1);
+            var myEncoderParameter = new EncoderParameter(myEncoder, 50L);
+            myEncoderParameters.Param[0] = myEncoderParameter;
+            myBitmap.Save("temp.jpg", myImageCodecInfo, myEncoderParameters);
+            var picFile = new FileInfo("temp.jpg");
+            if (picFile.Length >= _maxFileSize) {
+                return -1;
+            }
+            return 0;
+        }
+
+        private static ImageCodecInfo GetEncoderInfo(string mimeType)
+        {
+            int j;
+            var encoders = ImageCodecInfo.GetImageEncoders();
+            for(j = 0; j < encoders.Length; ++j)
+            {
+                if(encoders[j].MimeType == mimeType)
+                    return encoders[j];
+            }
+            return null;
         }
 
         /*
