@@ -1,0 +1,86 @@
+{{
+  "result_num": 16,
+  "log_id": 5627XXXXXXXXXXX1247,
+  "confidence_coefficient": "确定",
+  "result": [
+    {
+      "class_name": "性感",
+      "probability": 1E-06
+    },
+    {
+      "class_name": "色情",
+      "probability": 3E-06
+    },
+    {
+      "class_name": "正常",
+      "probability": 0.999996
+    }
+  ],
+  "result_fine": [
+    {
+      "class_name": "一般色情",
+      "probability": 2E-06
+    },
+    {
+      "class_name": "卡通色情",
+      "probability": 1E-06
+    },
+    {
+      "class_name": "SM",
+      "probability": 0.0
+    },
+    {
+      "class_name": "艺术品色情",
+      "probability": 0.0
+    },
+    {
+      "class_name": "儿童裸露",
+      "probability": 0.0
+    },
+    {
+      "class_name": "低俗",
+      "probability": 0.0
+    },
+    {
+      "class_name": "性玩具",
+      "probability": 4E-06
+    },
+    {
+      "class_name": "女性性感",
+      "probability": 1E-06
+    },
+    {
+      "class_name": "卡通女性性感",
+      "probability": 4E-06
+    },
+    {
+      "class_name": "男性性感",
+      "probability": 0.0
+    },
+    {
+      "class_name": "自然男性裸露",
+      "probability": 0.0
+    },
+    {
+      "class_name": "亲密行为",
+      "probability": 0.0
+    },
+    {
+      "class_name": "卡通亲密行为",
+      "probability": 4E-06
+    },
+    {
+      "class_name": "特殊类",
+      "probability": 0.0
+    },
+    {
+      "class_name": "一般正常",
+      "probability": 0.004966
+    },
+    {
+      "class_name": "卡通正常",
+      "probability": 0.995016
+    }
+  ],
+  "conclusion": "正常"
+}}
