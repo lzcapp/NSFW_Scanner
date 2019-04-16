@@ -1,4 +1,6 @@
-﻿namespace FileScanner
+﻿using System.Windows.Forms;
+
+namespace FileScanner
 {
     partial class FrmMain
     {
@@ -45,8 +47,10 @@
             this.llbPicfile = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // llbPath
@@ -155,10 +159,10 @@
             // picSearch
             // 
             this.picSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picSearch.Image = global::FileScanner.Properties.Resources.search_black;
-            this.picSearch.Location = new System.Drawing.Point(354, 12);
+            this.picSearch.Image = global::FileScanner.Properties.Resources.search;
+            this.picSearch.Location = new System.Drawing.Point(322, 20);
             this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(69, 73);
+            this.picSearch.Size = new System.Drawing.Size(50, 53);
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearch.TabIndex = 0;
             this.picSearch.TabStop = false;
@@ -170,7 +174,7 @@
             this.llbPicfile.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
             this.llbPicfile.Location = new System.Drawing.Point(24, 51);
             this.llbPicfile.Name = "llbPicfile";
-            this.llbPicfile.Size = new System.Drawing.Size(296, 19);
+            this.llbPicfile.Size = new System.Drawing.Size(281, 24);
             this.llbPicfile.TabIndex = 12;
             this.llbPicfile.Text = "test.jpg";
             // 
@@ -199,7 +203,19 @@
             this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.Size = new System.Drawing.Size(443, 162);
             this.listBox1.TabIndex = 14;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
+            this.listBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox1_MouseUp);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::FileScanner.Properties.Resources.pause;
+            this.pictureBox1.Location = new System.Drawing.Point(396, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 53);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // FrmMain
             // 
@@ -207,6 +223,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(468, 469);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.llbPicfile);
@@ -225,10 +242,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FileScanner";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picShow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,6 +269,7 @@
         private System.Windows.Forms.LinkLabel llbPicfile;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ListBox listBox1;
+        private PictureBox pictureBox1;
     }
 }
 

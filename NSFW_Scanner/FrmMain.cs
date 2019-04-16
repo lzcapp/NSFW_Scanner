@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Threading;
 
 namespace FileScanner
 {
     public partial class FrmMain : Form {
         private static readonly PicScanner Scanner = new PicScanner();
+        private bool _isPause = false;
 
         public FrmMain() {
             InitializeComponent();
@@ -33,8 +36,12 @@ namespace FileScanner
             fileList = PicScanner.GetFiles(dirPath, fileList);
             llbPicfile.Text = @"Start Scanning.";
             progressBar1.Maximum = fileList.Count;
-            foreach (var filePath in fileList)
-            {
+            // ReSharper disable once ForCanBeConvertedToForeach
+            for (var index = 0; index < fileList.Count;) {
+                var filePath = fileList[index];
+                while (_isPause) {
+                    Application.DoEvents();
+                }
                 llbPorn.Text = pornNum.ToString();
                 llbSexy.Text = sexyNum.ToString();
                 llbNorm.Text = normNum.ToString();
@@ -47,49 +54,73 @@ namespace FileScanner
                     picResult = Scanner.PicQuery(image);
                     picType = picResult.Split(',')[0];
                 }
+
                 try {
                     File.Delete("temp.jpg");
                 } catch (Exception) {
                     // ignored
                 }
 
-                switch (picType)
-                {
+                switch (picType) {
                     case "色情":
                         pornNum++;
-                        listBox1.Items.Add(@"Porn/" + picResult.Split(',')[1] + ": " + filePath);
+                        listBox1.Items.Add(@"色情/" + picResult.Split(',')[1] + ": " + filePath);
                         break;
                     case "性感":
                         sexyNum++;
-                        listBox1.Items.Add(@"Sexy/" + picResult.Split(',')[1] + ": " + filePath);
+                        listBox1.Items.Add(@"性感/" + picResult.Split(',')[1] + ": " + filePath);
                         break;
                     case "正常":
                         normNum++;
-                        listBox1.Items.Add(@"Norm/" + picResult.Split(',')[1] + ": " + filePath);
+                        listBox1.Items.Add(@"正常/" + picResult.Split(',')[1] + ": " + filePath);
                         break;
                     default:
                         nonpNum++;
-                        listBox1.Items.Add(@"Skip: " + filePath);
+                        listBox1.Items.Add(@"忽略: " + filePath);
                         break;
                 }
-                var portNum = Math.Round((pornNum + sexyNum) / (double)(pornNum + sexyNum + normNum + nonpNum) * 100, 2);
+
+                var portNum = Math.Round((pornNum + sexyNum) / (double) (pornNum + sexyNum + normNum + nonpNum) * 100,
+                                         2);
                 llbPort.Text = portNum + @"%";
                 llbPorn.Text = pornNum + @"x";
                 llbSexy.Text = sexyNum + @"x";
                 llbNorm.Text = normNum + @"x";
                 progressBar1.Value = pornNum + sexyNum + normNum + nonpNum;
+                index++;
                 Application.DoEvents();
             }
         }
 
-        private void ListBox1_SelectedIndexChanged(object sender, EventArgs e) {
+        private void ListBox1_MouseUp(object sender, MouseEventArgs e) {
             var picPath = listBox1.SelectedItem.ToString();
             var repPath = picPath.Replace(picPath.Split(' ')[0], "");
-            FrmPic.PicPath = repPath;
-            var insFrmPic = new FrmPic();
-            insFrmPic.SetBounds(Cursor.Position.X + 30, Cursor.Position.Y - 160, insFrmPic.Width, insFrmPic.Height);
-            insFrmPic.Show();
-            Application.DoEvents();
+            // ReSharper disable once SwitchStatementMissingSomeCases
+            switch (e.Button) {
+                case MouseButtons.Left: 
+                    FrmPic.PicPath = repPath;
+                    var insFrmPic = new FrmPic();
+                    insFrmPic.SetBounds(Cursor.Position.X + 30, Cursor.Position.Y - 160, insFrmPic.Width, insFrmPic.Height);
+                    insFrmPic.Show();
+                    break;
+                case MouseButtons.Right:
+                    Process.Start("Explorer.exe", "/select," + repPath);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e) {
+            if (_isPause) {
+                pictureBox1.Image = FileScanner.Properties.Resources.pause;
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                _isPause = false;
+            } else {
+                pictureBox1.Image = FileScanner.Properties.Resources.play;
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                _isPause = true;
+            }
         }
     }
 }
