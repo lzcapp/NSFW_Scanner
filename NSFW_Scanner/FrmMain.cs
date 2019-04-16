@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System.Threading;
+using FileScanner.Properties;
 
 namespace FileScanner
 {
     public partial class FrmMain : Form {
         private static readonly PicScanner Scanner = new PicScanner();
-        private bool _isPause = false;
+        private bool _isPause;
 
         public FrmMain() {
             InitializeComponent();
@@ -20,6 +20,8 @@ namespace FileScanner
         }
 
         private void PicSearch(object sender, EventArgs e) {
+            _isPause = false;
+            pictureBox1.Image = Resources.pause;
             var pornNum = 0;
             var sexyNum = 0;
             var normNum = 0;
@@ -90,6 +92,8 @@ namespace FileScanner
                 index++;
                 Application.DoEvents();
             }
+            _isPause = false;
+            pictureBox1.Image = Resources.pause;
         }
 
         private void ListBox1_MouseUp(object sender, MouseEventArgs e) {
@@ -106,18 +110,16 @@ namespace FileScanner
                 case MouseButtons.Right:
                     Process.Start("Explorer.exe", "/select," + repPath);
                     break;
-                default:
-                    break;
             }
         }
 
         private void PictureBox1_Click(object sender, EventArgs e) {
             if (_isPause) {
-                pictureBox1.Image = FileScanner.Properties.Resources.pause;
+                pictureBox1.Image = Resources.pause;
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                 _isPause = false;
             } else {
-                pictureBox1.Image = FileScanner.Properties.Resources.play;
+                pictureBox1.Image = Resources.play;
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                 _isPause = true;
             }
