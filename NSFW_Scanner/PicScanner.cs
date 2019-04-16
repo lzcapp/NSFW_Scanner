@@ -6,6 +6,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Xml;
 using Baidu.Aip.ContentCensor;
+using Newtonsoft.Json.Linq;
 
 namespace FileScanner {
     internal class PicScanner {
@@ -31,7 +32,8 @@ namespace FileScanner {
             try {
                 var resultPorn = _clientAntiPorn.Detect(image);
                 var resultType = resultPorn["conclusion"].ToString();
-                return resultType;
+                var resultDetail = MaxProb(resultPorn);
+                return resultType + "," + resultDetail;
             } catch (Exception) {
                 return @"错误";
             }
@@ -52,7 +54,7 @@ namespace FileScanner {
                     var fileExt = fsInfo.Extension.ToLower();
                     if (fileExt != ".jpg" && fileExt != ".png" && fileExt != ".bmp" &&
                         fileExt != ".jpeg") continue;
-                    var fileInfo = new FileInfo(fsInfo.FullName);
+                    // var fileInfo = new FileInfo(fsInfo.FullName);
                     // if (fileInfo.Length >= _maxFileSize) continue;
                     fileList.Add(fsInfo.FullName);
                 }
@@ -85,6 +87,21 @@ namespace FileScanner {
                     return encoders[j];
             }
             return null;
+        }
+
+        private static string MaxProb(JObject result)
+        {
+            var jtRoot = result["result_fine"];
+            double maxProb = 0;
+            var index = 0;
+            for (var i = 0; i < 16; i++)
+            {
+                var temp = Convert.ToDouble(jtRoot[i]["probability"].ToString());
+                if (!(temp > maxProb)) continue;
+                maxProb = temp;
+                index = i;
+            }
+            return jtRoot[index]["class_name"].ToString();
         }
 
         /*
