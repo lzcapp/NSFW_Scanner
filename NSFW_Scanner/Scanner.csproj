@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>search.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>FileScanner.Program</StartupObject>
@@ -107,6 +107,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <Content Include="search.ico" />
+    <None Include="icon\search.png" />
+    <None Include="icon\play.png" />
+    <None Include="icon\pause.png" />
     <None Include="Resources\ic_search_grey600_48dp.png" />
     <None Include="Resources\ic_stop_grey600_48dp.png" />
     <None Include="Resources\ic_stop_black_48dp.png" />
