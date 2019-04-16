@@ -41,9 +41,11 @@ namespace FileScanner
                 picShow.ImageLocation = filePath;
                 llbPicfile.Text = filePath.Split('\\')[filePath.Split('\\').Length - 1];
                 var picType = "";
+                var picResult = "";
                 if (PicScanner.ImageCompress(filePath) == 0) {
                     var image = File.ReadAllBytes("temp.jpg");
-                    picType = Scanner.PicQuery(image);
+                    picResult = Scanner.PicQuery(image);
+                    picType = picResult.Split(',')[0];
                 }
                 try {
                     File.Delete("temp.jpg");
@@ -55,14 +57,15 @@ namespace FileScanner
                 {
                     case "色情":
                         pornNum++;
-                        listBox1.Items.Add(@"Porn: " + filePath);
+                        listBox1.Items.Add(@"Porn/" + picResult.Split(',')[1] + ": " + filePath);
                         break;
                     case "性感":
                         sexyNum++;
-                        listBox1.Items.Add(@"Sexy: " + filePath);
+                        listBox1.Items.Add(@"Sexy/" + picResult.Split(',')[1] + ": " + filePath);
                         break;
                     case "正常":
                         normNum++;
+                        listBox1.Items.Add(@"Norm/" + picResult.Split(',')[1] + ": " + filePath);
                         break;
                     default:
                         nonpNum++;
@@ -81,18 +84,7 @@ namespace FileScanner
 
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e) {
             var picPath = listBox1.SelectedItem.ToString();
-            string repPath;
-            switch (picPath[0]) {
-                case 'S':
-                    repPath = picPath.Replace("Sexy: ", "");
-                    break;
-                case 'P':
-                    repPath = picPath.Replace("Porn: ", "");
-                    break;
-                default:
-                    repPath = picPath;
-                    break;
-            }
+            var repPath = picPath.Replace(picPath.Split(' ')[0], "");
             FrmPic.PicPath = repPath;
             var insFrmPic = new FrmPic();
             insFrmPic.SetBounds(Cursor.Position.X + 30, Cursor.Position.Y - 160, insFrmPic.Width, insFrmPic.Height);
