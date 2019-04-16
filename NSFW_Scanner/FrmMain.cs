@@ -21,6 +21,8 @@ namespace FileScanner
 
         private void PicSearch(object sender, EventArgs e) {
             _isPause = false;
+            pictureBox1.Enabled = true;
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = Resources.pause;
             var pornNum = 0;
             var sexyNum = 0;
@@ -89,11 +91,20 @@ namespace FileScanner
                 llbSexy.Text = sexyNum + @"x";
                 llbNorm.Text = normNum + @"x";
                 progressBar1.Value = pornNum + sexyNum + normNum + nonpNum;
+                /*
+                var progress = Math.Round(progressBar1.Value / (progressBar1.Maximum * 1.00), 2);
+
+                progressBar1.CreateGraphics().DrawString(progress + "%", new Font("Arial",
+                        (float)10.25, FontStyle.Bold),
+                    Brushes.Red, new PointF(progressBar1.Width / 2 - 10, progressBar1.Height / 2 - 7));
+                */
                 index++;
                 Application.DoEvents();
             }
             _isPause = false;
             pictureBox1.Image = Resources.pause;
+            pictureBox1.Enabled = false;
+            pictureBox1.Cursor = Cursors.No;
         }
 
         private void ListBox1_MouseUp(object sender, MouseEventArgs e) {
