@@ -17,6 +17,10 @@ namespace FileScanner
 
         private void Form1_Load(object sender, EventArgs e) {
             Scanner.InitiateScanner();
+            _isPause = false;
+            pictureBox1.Enabled = false;
+            pictureBox1.Cursor = Cursors.No;
+            pictureBox1.Image = Resources.pause;
         }
 
         private void PicSearch(object sender, EventArgs e) {
