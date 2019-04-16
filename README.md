@@ -22,4 +22,4 @@
 
 ## NSFW_Scanner
 
-![NSFW_Scanner](Screenshot/4.PNG)
+![NSFW_Scanner](Screenshot/3.PNG)
