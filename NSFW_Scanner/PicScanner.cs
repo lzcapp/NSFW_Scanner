@@ -103,27 +103,5 @@ namespace FileScanner {
             }
             return jtRoot[index]["class_name"].ToString();
         }
-
-        /*
-        public static byte[] ImageCompress(string filepath) {
-            var myBitmap = new Bitmap(filepath);
-            var myImageCodecInfo = GetEncoderInfo("image/jpeg");
-            Encoder myEncoder = Encoder.Quality;
-            var myEncoderParameters = new EncoderParameters(1);
-            var myEncoderParameter = new EncoderParameter(myEncoder, 25L);
-            myEncoderParameters.Param[0] = myEncoderParameter;
-            myBitmap.Save("Shapes025.jpg", myImageCodecInfo, myEncoderParameters);
-        }
-
-        private static ImageCodecInfo GetEncoderInfo(string mimeType) {
-            int j;
-            var encoders = ImageCodecInfo.GetImageEncoders();
-            for (j = 0; j < encoders.Length; ++j) {
-                if (encoders[j].MimeType == mimeType)
-                    return encoders[j];
-            }
-            return null;
-        }
-        */
     }
 }
