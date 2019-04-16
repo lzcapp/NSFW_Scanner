@@ -38,7 +38,7 @@ namespace FileScanner
             var fileList = new List<string>();
             llbPicfile.Text = @"Start Fecthing Sub-folders and files.";
             fileList = PicScanner.GetFiles(dirPath, fileList);
-            llbPicfile.Text = @"Start Scanning.";
+            llbPicfile.Text = @"Start Scanning...";
             progressBar1.Maximum = fileList.Count;
             // ReSharper disable once ForCanBeConvertedToForeach
             for (var index = 0; index < fileList.Count;) {
