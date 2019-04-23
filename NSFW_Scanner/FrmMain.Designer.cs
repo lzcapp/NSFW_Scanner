@@ -57,9 +57,9 @@ namespace FileScanner
             // 
             this.llbPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbPath.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbPath.Location = new System.Drawing.Point(21, 20);
+            this.llbPath.Location = new System.Drawing.Point(21, 19);
             this.llbPath.Name = "llbPath";
-            this.llbPath.Size = new System.Drawing.Size(435, 31);
+            this.llbPath.Size = new System.Drawing.Size(284, 29);
             this.llbPath.TabIndex = 1;
             this.llbPath.Text = "D:\\test";
             // 
@@ -68,7 +68,7 @@ namespace FileScanner
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel2.Location = new System.Drawing.Point(21, 85);
+            this.linkLabel2.Location = new System.Drawing.Point(21, 80);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(68, 29);
             this.linkLabel2.TabIndex = 2;
@@ -79,7 +79,7 @@ namespace FileScanner
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel3.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel3.Location = new System.Drawing.Point(21, 125);
+            this.linkLabel3.Location = new System.Drawing.Point(21, 117);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(69, 29);
             this.linkLabel3.TabIndex = 3;
@@ -90,7 +90,7 @@ namespace FileScanner
             this.linkLabel4.AutoSize = true;
             this.linkLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel4.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel4.Location = new System.Drawing.Point(21, 165);
+            this.linkLabel4.Location = new System.Drawing.Point(21, 155);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(98, 29);
             this.linkLabel4.TabIndex = 4;
@@ -100,9 +100,9 @@ namespace FileScanner
             // 
             this.llbPorn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbPorn.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbPorn.Location = new System.Drawing.Point(189, 85);
+            this.llbPorn.Location = new System.Drawing.Point(189, 80);
             this.llbPorn.Name = "llbPorn";
-            this.llbPorn.Size = new System.Drawing.Size(131, 29);
+            this.llbPorn.Size = new System.Drawing.Size(131, 27);
             this.llbPorn.TabIndex = 5;
             this.llbPorn.Text = "00";
             // 
@@ -110,9 +110,9 @@ namespace FileScanner
             // 
             this.llbSexy.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbSexy.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbSexy.Location = new System.Drawing.Point(189, 125);
+            this.llbSexy.Location = new System.Drawing.Point(189, 117);
             this.llbSexy.Name = "llbSexy";
-            this.llbSexy.Size = new System.Drawing.Size(131, 29);
+            this.llbSexy.Size = new System.Drawing.Size(131, 27);
             this.llbSexy.TabIndex = 6;
             this.llbSexy.Text = "00";
             // 
@@ -120,9 +120,9 @@ namespace FileScanner
             // 
             this.llbNorm.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbNorm.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbNorm.Location = new System.Drawing.Point(189, 165);
+            this.llbNorm.Location = new System.Drawing.Point(189, 155);
             this.llbNorm.Name = "llbNorm";
-            this.llbNorm.Size = new System.Drawing.Size(131, 29);
+            this.llbNorm.Size = new System.Drawing.Size(131, 27);
             this.llbNorm.TabIndex = 7;
             this.llbNorm.Text = "00";
             // 
@@ -131,18 +131,18 @@ namespace FileScanner
             this.llbPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbPort.ForeColor = System.Drawing.Color.Red;
             this.llbPort.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbPort.Location = new System.Drawing.Point(21, 207);
+            this.llbPort.Location = new System.Drawing.Point(21, 194);
             this.llbPort.Name = "llbPort";
-            this.llbPort.Size = new System.Drawing.Size(284, 28);
+            this.llbPort.Size = new System.Drawing.Size(284, 26);
             this.llbPort.TabIndex = 10;
             this.llbPort.Text = "00.00%";
             // 
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.progressBar1.Location = new System.Drawing.Point(12, 255);
+            this.progressBar1.Location = new System.Drawing.Point(12, 239);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(444, 29);
+            this.progressBar1.Size = new System.Drawing.Size(444, 27);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 11;
             // 
@@ -151,9 +151,9 @@ namespace FileScanner
             this.picShow.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picShow.Cursor = System.Windows.Forms.Cursors.Default;
             this.picShow.ErrorImage = null;
-            this.picShow.Location = new System.Drawing.Point(311, 91);
+            this.picShow.Location = new System.Drawing.Point(311, 85);
             this.picShow.Name = "picShow";
-            this.picShow.Size = new System.Drawing.Size(143, 149);
+            this.picShow.Size = new System.Drawing.Size(143, 140);
             this.picShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picShow.TabIndex = 8;
             this.picShow.TabStop = false;
@@ -162,9 +162,9 @@ namespace FileScanner
             // 
             this.picSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picSearch.Image = global::FileScanner.Properties.Resources.search;
-            this.picSearch.Location = new System.Drawing.Point(323, 20);
+            this.picSearch.Location = new System.Drawing.Point(323, 19);
             this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(51, 53);
+            this.picSearch.Size = new System.Drawing.Size(51, 50);
             this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSearch.TabIndex = 0;
             this.picSearch.TabStop = false;
@@ -174,9 +174,9 @@ namespace FileScanner
             // 
             this.llbPicfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbPicfile.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.llbPicfile.Location = new System.Drawing.Point(24, 51);
+            this.llbPicfile.Location = new System.Drawing.Point(24, 48);
             this.llbPicfile.Name = "llbPicfile";
-            this.llbPicfile.Size = new System.Drawing.Size(281, 24);
+            this.llbPicfile.Size = new System.Drawing.Size(281, 22);
             this.llbPicfile.TabIndex = 12;
             this.llbPicfile.Text = "test.jpg";
             // 
@@ -186,7 +186,7 @@ namespace FileScanner
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.ForeColor = System.Drawing.Color.Red;
             this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel1.Location = new System.Drawing.Point(181, 207);
+            this.linkLabel1.Location = new System.Drawing.Point(181, 194);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(88, 29);
             this.linkLabel1.TabIndex = 13;
@@ -198,12 +198,12 @@ namespace FileScanner
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.HorizontalScrollbar = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 295);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(12, 277);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(443, 162);
+            this.listBox1.Size = new System.Drawing.Size(443, 152);
             this.listBox1.TabIndex = 14;
             this.listBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox1_MouseUp);
             // 
@@ -212,9 +212,9 @@ namespace FileScanner
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.No;
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = global::FileScanner.Properties.Resources.pause;
-            this.pictureBox1.Location = new System.Drawing.Point(396, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(396, 19);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(51, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -222,10 +222,10 @@ namespace FileScanner
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(468, 469);
+            this.ClientSize = new System.Drawing.Size(468, 440);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.linkLabel1);
